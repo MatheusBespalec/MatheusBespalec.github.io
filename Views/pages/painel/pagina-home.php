@@ -7,7 +7,7 @@
 	}
 
 ?>
-
+<h1>Atualizar Informações da Página</h1>
 <div class="box-content">
 	<?php 
 
