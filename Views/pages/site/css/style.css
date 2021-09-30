@@ -1,0 +1,499 @@
+/*Default*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Fira Code', monospace;
+}
+
+html,body{
+	height: 100%;
+	background-color: #121212;
+}
+
+.container{
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 2%;
+	position: relative;
+}
+
+.overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay-callback{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 2;
+}
+
+.w50{
+	width: 50%;
+	float: left;
+	text-align: left;
+	margin-top: 30px;
+}
+
+.clear{
+	clear: both;
+}
+
+section{
+	position: relative;
+	padding: 75px 0;
+	color: #fff;
+}
+
+h2{
+	font-size: 35px;
+	text-align: center;
+}
+
+h3{
+	text-align: center;
+	color: #2962ff;
+	font-size: 22px;
+}
+
+h4{
+	font-size: 18px;
+	margin-top: 15px;
+}
+
+a{
+	color: #448aff;
+	text-decoration: none;
+}
+
+/*Header*/
+
+header{
+	background-color: #242424;
+	height: 80px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-bottom: 2px solid #2962ff;
+	-webkit-box-shadow: 0px 1px 12px 3px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 1px 12px 3px rgba(0,0,0,0.75);
+	box-shadow: 0px 1px 12px 3px rgba(0,0,0,0.75);
+	position: relative;
+}
+
+header h1{
+	font-size: 35px;
+	color: #fff;
+}
+
+nav.mobile{
+	display: none;
+	position: relative;
+}
+
+nav.mobile ul{
+	position: fixed;
+	padding-top: 50px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	text-align: center;
+	background-color: #121212;
+}
+
+nav.mobile ul li{
+	padding: 30px;
+	font-size: 25px;
+}
+
+header li{
+	list-style: none;
+	display: inline-block;
+	margin-right: -4px;
+	font-size: 20px;
+	padding: 0 15px;
+}
+
+nav li a{
+	color: #fff;
+	text-decoration: none;
+	font-weight: bolder;
+	transition: 0.5s;
+}
+
+nav li a:hover{
+	color: #999;
+}
+
+.icon-menu{
+	font-size: 30px;
+	color: #fff;
+	position: absolute;
+	top: 35px;
+	right: 35px;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+
+nav .icon-menu{
+	position: fixed;
+	z-index: 3;
+}
+
+header .icon-menu i{display: none;}
+
+.icon-menu .fa-times{color: #f53b3b;}
+
+/*Footer*/
+
+section.footer{
+	background-color: #272727;
+	padding: 50px;
+}
+
+section.footer .wraper-sociais{
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+}
+
+.wraper-sociais a{
+	color: #777;
+	font-size: 45px;
+	transition: 0.5s;
+}
+
+.wraper-sociais a i{
+	transition: 0.5s;
+}
+
+.wraper-sociais a i.fa-github:hover{
+	color: #fff;
+}
+
+.wraper-sociais a i.fa-whatsapp:hover{
+	color: #25D366;
+}
+
+.wraper-sociais a i.fa-linkedin:hover{
+	color: #2867B2;
+}
+
+.wraper-sociais a i{
+	margin: 13px;
+}
+
+footer{
+	background-color: #242424;
+	padding: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer span{
+	padding: 5px 10px;
+	border: 1px dotted #fff;
+	border-radius: 15px;
+	color: #fff;
+}
+
+/*Pagina Home*/
+/*Sessão Banner*/
+
+section.banner{
+	background-image: url('../../../images/bg.jpg');
+	background-position: center;
+	background-size: cover;
+	min-height: 600px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+section.banner h1{
+	margin-bottom: 30px;
+	font-size: 80px;
+}
+
+section.banner p{	
+	display: inline-block;
+	padding: 0 20px;
+	font-size: 25px;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+}
+
+section.banner a{	
+	display: inline-block;
+	color: #fff;
+	font-size: 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 20px;
+	border: 2px solid #2962ff;
+	border-radius: 20px;
+	margin-top: 30px;
+	transition: 0.5s;
+	font-weight: bolder;
+	position: relative;
+	overflow: hidden;
+}
+
+section.banner a::before{	
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	transition: 0.8s;
+	background-color: rgba(150, 150, 150, 0.2);
+}
+
+section.banner a:hover::before{	
+	width: 100%;
+}
+
+/*Sessão Sobre*/
+
+section.sobre{
+	text-align: center;
+}
+
+section.sobre .wraper-sobre{
+	max-width: 1000px;
+	margin: 20px auto;
+	display: flex;
+	align-items: center;
+}
+
+section.sobre .wraper-sobre img{
+	height: 200px;
+	border-radius: 100px;
+}
+
+section.sobre .wraper-sobre p{
+	text-align: justify;
+	padding-left: 30px;
+	line-height: 24px;
+}
+
+section.sobre ul{
+	list-style: none;
+	font-size: 16px;
+	margin-left: 5px;
+}
+
+section.sobre ul span{
+	font-size: 14px;
+	margin-left: 20px;
+}
+
+section.sobre ul ul li{
+	list-style: disc;
+	font-size: 15px;
+	margin-left: 40px;
+	color: rgb(180, 180, 180);
+}
+
+/*Portifolio*/
+
+section.portifolio{
+	background-color: #242424;
+}
+
+section.portifolio .wraper-projetos{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+section.portifolio .projeto{
+	width: 33%;
+	height: 250px;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	margin: 20px 0;
+}
+
+section.portifolio .projeto .overlay{
+	opacity: 0;
+	transition: 0.8s;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	font-weight: bolder;
+	font-size: 18px;
+}
+section.portifolio .projeto .overlay i{
+	margin-right: 10px;
+}
+
+section.portifolio .projeto .overlay:hover{
+	opacity: 1;
+}
+
+/*Contato*/
+
+section.contato form{
+	margin: 30px auto;
+	max-width: 800px;
+}
+
+section.contato form .form-group{
+	margin: 40px 0;
+	font-size: 18px;
+	font-weight: bolder;
+	position: relative;
+}
+
+section.contato form .form-group label{
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	color: #333;
+	transition: 0.5s;
+}
+
+section.contato form .form-group input[type=text],
+section.contato form .form-group input[type=email],
+section.contato form .form-group textarea{
+	width: 100%;
+	color: #ccc;
+	border: 0;
+	border-bottom: 2px solid #242424;
+	background-color: #151515;
+	padding: 12px;
+	font-size: 18px;
+}
+
+section.contato form input[type=submit]{
+	padding: 5px 30px;
+	color: #fff;
+	background-color: #242424;
+	border: 0;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+section.contato form input[type=submit]:hover{
+	padding: 5px 30px;
+	color: #fff;
+	background-color: #242424;
+	border: 0;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+section.contato form .form-group textarea{
+	height: 150px;
+	resize: vertical;
+}
+
+section.contato form .form-group input:focus,
+section.contato form .form-group textarea:focus{
+	outline: 0;
+}
+
+/*Callback*/
+
+.callback{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: #fff;
+	border-radius: 25px;
+	padding: 30px;
+	text-align: center;
+	display: none;
+	z-index: 3;
+}
+
+.callback i{
+	font-size: 50px;
+	display: none;
+}
+
+.callback .mensagem{
+	font-size: 20px;
+	color: #333;
+	margin: 20px 0;
+	display: none;
+	font-weight: bolder;
+}
+
+.callback a{
+	display: inline-block;
+	padding: 10px 30px;
+	color: #fff;
+	background-color: #2962ff;
+	display: none;
+	cursor: pointer;
+}
+
+/*Responsivo*/
+
+@media screen and (max-width: 768px){
+
+	header .icon-menu .fa-bars{display: block;}
+	nav.desktop{display: none;}
+
+	nav.mobile ul{
+		display: block;
+	}
+
+	.w50{
+		width: 100%;
+		padding: 0 8%;
+	}
+
+	section.sobre .wraper-sobre{
+		display: block;
+		margin-top: 20px;
+	}
+
+	section.sobre .wraper-sobre p{
+		padding: 0;
+	}
+
+	section.portifolio .projeto{
+		width: 100%;
+		height: 300px;
+	}
+
+	section.banner h1{
+		font-size: 60px;
+	}
+
+	section.banner p{	
+		padding: 0 10px;
+		font-size: 22px;
+	}
+
+	section.banner a{	
+		font-size: 18px;
+		padding: 15px;
+	}
+
+	header h1{
+		font-size: 30px;
+	}
+}
