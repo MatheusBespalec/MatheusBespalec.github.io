@@ -60,6 +60,7 @@ html,body{
 
 .box-content{
 	padding: 30px;
+	margin-bottom: 30px;
 	box-shadow: 1px solid #ccc;
 	box-shadow: 4px 7px 10px 0px rgba(0,0,0,0.75);
 	-webkit-box-shadow: 4px 7px 10px 0px rgba(0,0,0,0.75);
@@ -108,7 +109,7 @@ form h2{
 	margin: 10px 0;
 }
 
-input,textarea{
+input,textarea,select{
 	width: 100%;
 	padding: 12px;
 	font-size: 16px;
@@ -123,7 +124,7 @@ textarea{
 }
 
 input[type=submit]{
-	max-width: 200px;
+	max-width: 250px;
 	cursor: pointer;
 	color: #fff;
 	background-color: #1de9b6;
@@ -292,10 +293,13 @@ header div{
 .wraper-boxes{
 	display: flex;
 	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 .box{
 	padding: 30px;
+	margin-top: 30px;
 	box-shadow: 4px 7px 10px 0px rgba(0,0,0,0.75);
 	-webkit-box-shadow: 4px 7px 10px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 4px 7px 10px 0px rgba(0,0,0,0.75);
