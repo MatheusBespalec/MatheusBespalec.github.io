@@ -7,8 +7,9 @@
 	}
 
 ?>
-<h1>Atualizar Informações da Página</h1>
+
 <div class="box-content">
+	<h1>Atualizar Informações da Página</h1>
 	<?php 
 
 		if (isset($_POST['att'])) {

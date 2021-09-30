@@ -14,7 +14,18 @@
 				
 				<?php  
 
-					$page = (isset($par[0]) && $par[0] != '' ) ? $par[0] : 'home';
+					if(isset($par[0])){
+						$page = '';
+						foreach ($par as $key => $value) {
+							if($key == 0)
+								$page.=$value;
+							else
+								$page.="-$value";
+						}
+					}else{
+						$page = 'home';
+					}
+
 					$select = function($path) use ($page){
 						if($page == $path)
 							echo 'select';
@@ -32,18 +43,33 @@
 					</ul>
 				</div><!--wraper-list-->
 
-				
 				<h3 aberto="false" ref="paginas"><span>Páginas</span> <span class="arrow">></span></h3>
 				<div class="wraper-list" ref="paginas">
 					<ul>
-						<a href="<?php echo INCLUDE_PATH_PAINEL; ?>pagina-home">
+						<a href="<?php echo INCLUDE_PATH_PAINEL; ?>pagina/home">
 							<li class="<?php $select('pagina-home'); ?>" titulo="paginas">
 								<i class="fas fa-home"></i> Home
 							</li>
 						</a>
-						<a href="<?php echo INCLUDE_PATH_PAINEL; ?>pagina-projeto">
+						<a href="<?php echo INCLUDE_PATH_PAINEL; ?>pagina/projeto">
 							<li class="<?php $select('pagina-projeto'); ?>" titulo="paginas">
 								<i class="fas fa-code"></i> Projeto
+							</li>
+						</a>
+					</ul>
+				</div><!--wraper-list-->
+
+				<h3 aberto="false" ref="gerenciar"><span>Gerenciar</span> <span class="arrow">></span></h3>
+				<div class="wraper-list" ref="gerenciar">
+					<ul>
+						<a href="<?php echo INCLUDE_PATH_PAINEL; ?>gerenciar/skills">
+							<li class="<?php $select('gerenciar-skills'); ?>" titulo="gerenciar">
+								<i class="fas fa-home"></i> skills
+							</li>
+						</a>
+						<a href="<?php echo INCLUDE_PATH_PAINEL; ?>gerenciar/educacao">
+							<li class="<?php $select('gerenciar-educacao'); ?>" titulo="gerenciar">
+								<i class="fas fa-code"></i> Educação
 							</li>
 						</a>
 					</ul>

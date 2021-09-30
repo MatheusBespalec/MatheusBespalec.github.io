@@ -5,6 +5,16 @@
 	class AdminController{
 
 		private $view;
+		private static $page = '';
+
+		private static function formatPage($arr){
+			foreach ($arr as $key => $value) {
+				if($key == 0)
+					self::$page.=$value;
+				else
+					self::$page.="-$value";
+			}
+		}
 
 		public function executar(){
 			//Logar
@@ -19,13 +29,17 @@
 				$this->view->render();
 			});
 
-			//PAgina Painel
+			//Pagina Home
 			\Router::rota('admin/painel/?',function($par){
-				$pag = ($par[0] == '') ? 'home' : $par[0];
-				$this->view = new \Views\PainelView($pag);
+				$this->view = new \Views\PainelView('home');
+				$this->view->render();
+			});
+
+			\Router::rota('admin/painel/?/?',function($par){
+				self::formatPage($par);
+				$this->view = new \Views\PainelView(self::$page);
 				$this->view->render($par);
 			});
-			
 		}
 
 	}
