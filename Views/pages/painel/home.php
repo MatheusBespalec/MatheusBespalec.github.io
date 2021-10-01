@@ -12,7 +12,7 @@
 		[date('Y-m-d H:i:s',strtotime('-30 days'))]);
 
 ?>
-<section class="painel-visitas wraper-boxes">
+<section class="wraper-boxes">
 
 	<div class="box w30" style="background: #ff4242;">
 		<h3>Visitas Hoje<h3>
@@ -25,8 +25,8 @@
 	</div>
 
 	<div class="box w30" style="background: #42ff78;">
-		<h3>Média de Visitas(Semanal)<h3>
-		<p><?php echo ceil(count($usersMonth)/30); ?></p>
+		<h3>Média de Visitas (Semanal)<h3>
+		<p><?php echo ceil(count($usersMonth)/7); ?></p>
 	</div>
 
 </section><!--painel-visitas-->

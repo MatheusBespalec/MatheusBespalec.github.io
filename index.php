@@ -2,6 +2,7 @@
 	
 	include('config.php');
 
+	//Autoload
 	$autoload = function($class){
 		$class = str_replace('\\','/',$class);
 		if(file_exists($class.'.php'))

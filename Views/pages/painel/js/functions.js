@@ -57,4 +57,31 @@ $(function(){
 	
 	$('div[ref='+titulo+']').addClass('open');
 
+	function addAlert(tipo,mensagem){
+		$('.wraper-alert').html('');
+		$('.wraper-alert]').prepend('<div class="alert '+data['tipo']+'">'+data['mensagem']+'</div><!--alert-->');
+		setTimeout(function(){
+			$('.wraper-alert] .alert').animate({'opacity':'0'});
+		},3000)
+	}
+
+	var form;
+	$('.ajax').click(function(){
+		form = $(this).parent().parent().parent().find('.wraper-alert');
+	})
+
+	function boxAlert(tipo,mensagem){
+		form.html('<div class="alert '+tipo+'">'+mensagem+'</div><!--alert-->');
+		setTimeout(function(){
+			form.find('.alert').animate({'opacity':'0'});
+		},3000)
+	}
+
+	$('.ajax').ajaxForm({
+		dataType: 'json',
+		success: function(data){
+			boxAlert(data['tipo'],data['mensagem']);
+		}
+	})
+
 })

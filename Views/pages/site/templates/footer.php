@@ -29,8 +29,8 @@
 
 		<!-- Scripts -->
 		<script src="<?php echo INCLUDE_PATH_FULL; ?>js/jquery.js"></script>
-		<script src="<?php echo INCLUDE_PATH_FULL; ?>pages/site/js/functions.js"></script>
 		<script src="<?php echo INCLUDE_PATH_FULL; ?>js/formAjax.js"></script>
+		<script src="<?php echo INCLUDE_PATH_FULL; ?>pages/site/js/functions.js"></script>
 		<script src="<?php echo INCLUDE_PATH_FULL; ?>js/mask.js"></script>
 		<script src="https://kit.fontawesome.com/4053268ba0.js" crossorigin="anonymous"></script>
 		<!--  -->

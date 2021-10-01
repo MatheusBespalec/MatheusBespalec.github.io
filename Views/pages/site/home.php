@@ -35,9 +35,15 @@
 			<p>19</p>
 
 			<h4>Educação</h4>
-			<p style="margin: 0;">Cursando Sistemas de Informação</p>
-			<p style="margin: 0;">Curso Webmaster Front-End (<a href="https://dankicode.com" target="_blank">DankiCode</a>)</p>
-			<p>Curso Desenvolvimento Web (<a href="https://dankicode.com" target="_blank">DankiCode</a>)</p>
+			<?php 
+				$cursos = Models\MySql::selectAll('tb_site.educacao');
+				foreach($cursos as $key => $value){
+			?>
+				<p><?php echo $value['nome']; ?>
+				(<a href="<?php echo $value['link']; ?>" target="_blank"><?php echo $value['instituicao']; ?></a>)</p>
+			<?php 
+				}
+			?>
 
 			<h4>Endereço</h4>
 			<p>Ribeirão Pires - SP</p>
@@ -52,22 +58,27 @@
 		<div class="w50">
 			<h3>Skills</h3>
 			
-			<h4>Front-End</h4>
-			<ul class="main">
-				<li><i class="fab fa-html5" style="color: #f78736;"></i> HTML5</li>
-				<li><i class="fab fa-css3" style="color: #116dd6;"></i> CSS3</li>
-				<li><i class="fab fa-js-square" style="color: #f0d10c;"></i> JavaScript(+JQuery)</li>
-			</ul>
-
-			<h4>Back-End</h4>
-			<ul class="main">
-				<li><i class="fab fa-php" style="color: #4091ed;"></i> PHP</li>
-			</ul>
-
-			<h4>Banco de Dados</h4>
-			<ul class="main">
-				<li><i class="fas fa-database"></i> MySql</li>
-			</ul>
+			<?php
+				$categorias = Models\MySql::selectAll('tb_site.categoria_skill');
+				foreach($categorias as $key => $value){
+			?>
+				<h4><?php echo $value['nome']; ?></h4>
+				<ul>
+					<?php
+						$skills = Models\MySql::selectAll('tb_site.skills','WHERE categoria_id = ?',[$value['id']]);
+						foreach($skills as $key => $skillValue){
+					?>
+						<li>
+							<i class="<?php echo $skillValue['icone']; ?>" style="<?php echo $skillValue['cor']; ?>"></i>
+							<?php echo $skillValue['nome']; ?>
+						</li>
+					<?php
+						}
+					?>
+				</ul>
+			<?php
+				}
+			?>
 
 		</div><!--w50-->
 		<div class="clear"></div><!--clear-->
