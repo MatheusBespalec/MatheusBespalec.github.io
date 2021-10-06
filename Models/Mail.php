@@ -75,9 +75,8 @@
             $data['resultado'] = false;
             $data['mensagem']  = 'Campo nome e email devem não podem estar em vazios!';
         }else{
-            $mail = new MailModel('smtp-matheusbespalec.alwaysdata.net','matheusbespalec@alwaysdata.net
-','Matheus1!','Matheus');
-            $mail->sendTo('matheusbespalec@gmail.com','Matheus');
+            $mail = new MailModel('','','','');
+            $mail->sendTo('','');
             if($mail->sendMail($mensagem,'Mensagem do meu site!')){
                 $data['resultado'] = true;
                 $data['mensagem']  = 'Formulario enviado com sucesso!';
