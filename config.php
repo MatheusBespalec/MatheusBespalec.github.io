@@ -4,16 +4,16 @@
 	date_default_timezone_set('America/Sao_Paulo');
 
 	//Links
-	define('INCLUDE_PATH', 'http://localhost/site_dinamico/');
+	define('INCLUDE_PATH', 'http://matheusbespalec.alwaysdata.net/');
 	define('INCLUDE_PATH_FULL', INCLUDE_PATH.'Views/');
 	define('INCLUDE_PATH_PAINEL', INCLUDE_PATH.'admin/painel/');
 	define('BASE_DIR',__DIR__.'/');
 
 	//DB
-	define('HOST','localhost');
-	define('DB','portifolio');
-	define('USER','root');
-	define('PASS','');
+	define('HOST','mysql-matheusbespalec.alwaysdata.net');
+	define('DB','matheusbespalec_matheus');
+	define('USER','243831');
+	define('PASS','Matheus1!');
 
 	//Autoload
 	
