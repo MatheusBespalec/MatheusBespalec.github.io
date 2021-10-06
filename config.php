@@ -7,12 +7,23 @@
 	define('INCLUDE_PATH', 'http://localhost/site_dinamico/');
 	define('INCLUDE_PATH_FULL', INCLUDE_PATH.'Views/');
 	define('INCLUDE_PATH_PAINEL', INCLUDE_PATH.'admin/painel/');
-	define('BASE_DIR',__DIR__);
+	define('BASE_DIR',__DIR__.'/');
 
 	//DB
 	define('HOST','localhost');
 	define('DB','portifolio');
 	define('USER','root');
 	define('PASS','');
+
+	//Autoload
+	
+	$autoload = function($class){
+		$class = str_replace('\\','/',$class);
+		if(file_exists(BASE_DIR.$class.'.php')){
+			include($class.'.php');
+		}
+	};
+
+	spl_autoload_register($autoload);
 
 ?>

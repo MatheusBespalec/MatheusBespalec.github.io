@@ -4,7 +4,7 @@ $(function(){
 	//Abrir e Fechar
 	windowSize = $(window)[0].innerWidth;
 
-	if(windowSize <= 768)
+	if(windowSize <= 1100)
 		var openMenu = false;
 	else
 		var openMenu = true;
@@ -57,31 +57,29 @@ $(function(){
 	
 	$('div[ref='+titulo+']').addClass('open');
 
-	function addAlert(tipo,mensagem){
-		$('.wraper-alert').html('');
-		$('.wraper-alert]').prepend('<div class="alert '+data['tipo']+'">'+data['mensagem']+'</div><!--alert-->');
-		setTimeout(function(){
-			$('.wraper-alert] .alert').animate({'opacity':'0'});
-		},3000)
-	}
 
-	var form;
-	$('.ajax').click(function(){
-		form = $(this).parent().parent().parent().find('.wraper-alert');
-	})
 
-	function boxAlert(tipo,mensagem){
-		form.html('<div class="alert '+tipo+'">'+mensagem+'</div><!--alert-->');
+	function boxAlert(form,tipo,mensagem){
+		form.parent().find('.wraper-alert').html('<div class="alert '+tipo+'">'+mensagem+'</div><!--alert-->');
 		setTimeout(function(){
 			form.find('.alert').animate({'opacity':'0'});
 		},3000)
 	}
 
-	$('.ajax').ajaxForm({
-		dataType: 'json',
-		success: function(data){
-			boxAlert(data['tipo'],data['mensagem']);
-		}
+	$('form.ajax').on('submit',function(){
+		var form = $(this);
+		$.ajax({
+			url:path+'Models/ajax/formAjax.php',
+			method:'POST',
+			dataType:'json',
+			data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+			contentType: false,       // The content type used when sending data to the server.
+			cache: false,             // To unable request pages to be cached
+			processData:false 
+		}).done(function(data){
+			boxAlert(form,data['tipo'],data['mensagem']);
+		});
+		return false;
 	})
 
 })

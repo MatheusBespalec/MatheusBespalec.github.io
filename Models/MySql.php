@@ -79,7 +79,7 @@
 		}
 
 		public static function delete($table,$where=''){
-			if(self::conect()->exec("DELETE * FROM `$table` $where"))
+			if(self::conect()->exec("DELETE FROM `$table` $where"))
 				return true;
 			else
 				return false;

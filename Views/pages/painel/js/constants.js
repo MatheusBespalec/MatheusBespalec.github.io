@@ -1,0 +1,1 @@
+const path = $('path').attr('path');

@@ -19,6 +19,12 @@
 		],"WHERE id = ?",[$id]);
 	}
 
+	if(isset($_GET['deletarFormacao'])){
+		Models\MySql::delete('tb_site.educacao','WHERE id = '.$_GET['deletarFormacao']);
+		header('location: http://localhost/site_dinamico/admin/painel/gerenciar/educacao');
+		die();
+	}
+
 ?>
 <h1>Gerenciar Educação</h1>
 
@@ -30,7 +36,7 @@
 		$educacao = \Models\MySql::selectAll('tb_site.educacao');
 		foreach($educacao as $key => $value){
 	?>
-			<div class="w30 box">
+			<div class="w50 box">
 				<form method="post">
 					<div class="form-group">
 						<label>Titulo da Formação:</label>
@@ -50,6 +56,8 @@
 					<input type="hidden" name="educacao_id" value="<?php echo $value['id'] ?>" />
 					<input type="submit" name="atualizar_formacao" value="Atualizar Formação" />
 				</form>
+				<br>
+				<a class="btn delete" href="?deletarFormacao=<?php echo $value['id'] ?>">Deletar</a>
 			</div><!--w30-->
 	<?php 
 		}
@@ -59,25 +67,25 @@
 
 <div class="box-content">
 	<h2>Adicionar nova Formação:</h2>
+	<div class="wraper-alert"></div><!--wraper-alert-->
+	
+	<form method="post" class="ajax">
+		<div class="form-group">
+			<label>Titulo da Formação:</label>
+			<input type="text" name="nome" />
+		</div><!--form-group-->
 
-	<div class="box">
-		<form method="post">
-			<div class="form-group">
-				<label>Titulo da Formação:</label>
-				<input type="text" name="educacao_nome" />
-			</div><!--form-group-->
+		<div class="form-group">
+			<label>Nome da Instituição:</label>
+			<input type="text" name="instituicao" />
+		</div><!--form-group-->
 
-			<div class="form-group">
-				<label>Nome da Instituição:</label>
-				<input type="text" name="educacao_instituicao" />
-			</div><!--form-group-->
-
-			<div class="form-group">
-				<label>Link da Instituição:</label>
-				<input type="text" name="educacao_nome" />
-			</div><!--form-group-->
-			
-			<input type="submit" name="adicionar_educacao" value="Adicionar Formação" />
-		</form>
-	</div><!--w30-->
+		<div class="form-group">
+			<label>Link da Instituição:</label>
+			<input type="text" name="link" />
+		</div><!--form-group-->
+		<input type="hidden" name="identificador" value="cadastrar_educacao" />
+		
+		<input type="submit" name="action" value="Adicionar Formação" />
+	</form>
 </div><!--box-content-->

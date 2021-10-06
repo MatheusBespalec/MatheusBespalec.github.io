@@ -39,11 +39,11 @@ html,body{
 }
 
 .w50{
-	width: 50%;
+	width: 48%;
 }
 
 .w30{
-	width: 30%;
+	width: 31%;
 }
 
 .clear{
@@ -293,7 +293,7 @@ header div{
 .wraper-boxes{
 	display: flex;
 	justify-content: space-around;
-	align-items: center;
+	align-items: stretch;
 	flex-wrap: wrap;
 }
 
@@ -305,7 +305,63 @@ header div{
 	-moz-box-shadow: 4px 7px 10px 0px rgba(0,0,0,0.75);
 }
 
+/*Tabelas*/
+
+.wraper-table{
+	overflow: auto;
+}
+
+table{
+	min-width: 800px;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table img{
+	height: 75px;
+}
+
+table tr:nth-of-type(1){
+	background-color: #1de9b6;
+	color: #fff;
+	font-weight: bolder;
+	font-size: 18px;
+}
+
+table td{
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+/*Links*/
+
+a.btn{
+	padding: 6px;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+a.btn.info{background-color: #ffa142;}
+a.btn.delete{background-color: #ff4242;}
+h1 a{color: #000;}
+
 @media screen and (max-width: 1100px){
+
+	header{
+		width: 100%;
+	}
+
+	.content{
+		width: 100%;
+	}
+
+	.menu{
+		left: -300px;
+	}
+}
+
+@media screen and (max-width: 768px){
 
 	header{
 		width: 100%;

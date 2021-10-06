@@ -72,6 +72,11 @@
 								<i class="fas fa-code"></i> Educação
 							</li>
 						</a>
+						<a href="<?php echo INCLUDE_PATH_PAINEL; ?>gerenciar/projetos">
+							<li class="<?php $select('gerenciar-projetos'); ?>" titulo="gerenciar">
+								<i class="fas fa-code"></i> Projetos
+							</li>
+						</a>
 					</ul>
 				</div><!--wraper-list-->
 			</div><!--list-->
@@ -80,6 +85,7 @@
 		<!-- Scripts -->
 		<script src="<?php echo INCLUDE_PATH_FULL; ?>js/jquery.js"></script>
 		<script src="<?php echo INCLUDE_PATH_FULL; ?>js/formAjax.js"></script>
+		<script src="<?php echo INCLUDE_PATH_FULL; ?>pages/painel/js/constants.js"></script>
 		<script src="<?php echo INCLUDE_PATH_FULL; ?>pages/painel/js/functions.js"></script>
 		<script src="https://kit.fontawesome.com/4053268ba0.js" crossorigin="anonymous"></script>
 		<!--  -->

@@ -29,6 +29,7 @@
 		<link rel="icon" href="" type="image/x-icon" />
 	</head>
 	<body>
+		<path path="<?php echo INCLUDE_PATH; ?>"/>
 		<?php 
 	
 			//Deslogar

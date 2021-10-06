@@ -69,7 +69,7 @@
 						foreach($skills as $key => $skillValue){
 					?>
 						<li>
-							<i class="<?php echo $skillValue['icone']; ?>" style="<?php echo $skillValue['cor']; ?>"></i>
+							<i class="<?php echo $skillValue['icone']; ?>" style="color:<?php echo $skillValue['cor']; ?>;"></i>
 							<?php echo $skillValue['nome']; ?>
 						</li>
 					<?php
