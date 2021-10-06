@@ -91,13 +91,18 @@
 		<h2><?php echo $site['portifolio_titulo']; ?></h2>
 
 		<div class="wraper-projetos">
-			<div class="projeto" style="background-image: url('<?php echo INCLUDE_PATH_FULL; ?>images/portifolio/portifolio.png');">
-				<a href="https://github.com/MatheusBespalec/Portifolio" target="_blank"><div class="overlay"><i class="fas fa-external-link-alt"></i> Portifólio</div><!--overlay--></a>
-			</div><!--projeto-->
+			<?php
+				$projetos = Models\MySql::selectAll('tb_site.projetos');
+				foreach($projetos as $key => $value){
+			?>
 
-			<div class="projeto" style="background-image: url('<?php echo INCLUDE_PATH_FULL; ?>images/portifolio/site_pequeno_negocio.png');">
-				<a href="https://github.com/MatheusBespalec/sistema-pequeno-negocio" target="_blank"><div class="overlay"><i class="fas fa-external-link-alt"></i> Sistema de Pequeno Negócio</div><!--overlay--></a>
-			</div><!--projeto-->
+				<div class="projeto" style="background-image: url('<?php echo INCLUDE_PATH_FULL; ?>images/portifolio/<?php echo $value['imagem_capa']; ?>');">
+					<a href="<?php echo $value['github']; ?>" target="_blank"><div class="overlay"><i class="fas fa-external-link-alt"></i> <?php echo $value['titulo']; ?></div><!--overlay--></a>
+				</div><!--projeto-->
+
+			<?php
+				}
+			?>
 		</div><!--wraper-projetos-->
 
 	</div><!--container-->
